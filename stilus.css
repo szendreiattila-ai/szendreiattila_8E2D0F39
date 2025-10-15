@@ -1,0 +1,86 @@
+body{
+    background-image: url(konyv_hatter.jpg);
+    background-size: 500px;
+    background-attachment: fixed;
+}
+.container{
+    background-color: #ca8;
+    height: auto; 
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+header{
+    text-align: center;
+}
+
+section{
+    background-color: #eca;
+    border: 1px solid #432;
+    box-shadow: 5px 5px 20px #432;
+}
+
+img{
+    width: 150px;
+}
+
+section .btn{
+    background-color: #432;
+    color:#eca
+}
+
+section .btn:hover{
+    color: #432
+}
+footerdiv{
+    text-align: center;
+}
+
+footerdiv2{
+    text-align: center;
+}
+#no-results-msg {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+  }
+  #no-results-msg.show {
+    display: block;
+  }
+
+/* Simple custom modal for cart */
+/* Bootstrap modal is used instead of custom modal */
+
+/* Texture backgrounds */
+.texture-paper{
+    background-image: url(konyv_hatter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.texture-wood{
+    background-image: url(hatter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Exclusive page hero */
+.exclusive-hero{
+    background-image: url(konyv_hatter.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.card img.card-img-top{ height: 220px; object-fit: cover; }
+
+/* Ensure content is not hidden behind the fixed footer */
+body { padding-bottom: 70px; }
+.site-footer a { text-decoration: underline; }
+  

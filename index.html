@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyvajánló</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="stilus.css">
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Attila könyvesboltja</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id="Home" href="#">Kezdőlap <span class="sr-only">(Ajánlásaim)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="exclusive-link" href="exclusive.html" target="_blank" rel="noopener noreferrer">Exkluzív könyvek</a>
+                </li>
+            </ul>
+            <form class="d-flex align-items-center my-2 my-lg-0">
+                <input class="form-control me-2" type="text" placeholder="Keresés" aria-label="keresés" id="search-box">
+                <button class="btn btn-outline-success" type="button" id="search-btn">Keresés</button>
+            </form>
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-link" href="contact.html" target="_blank" rel="noopener noreferrer"><span class="btn btn-outline-info">Kapcsolat</span></a>
+                </li>
+                <li class="nav-item">
+                    <button id="cart-toggle" class="btn btn-outline-primary ms-3" type="button">Kosár (<span id="cart-count">0</span>)</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Könyvajánló</h1>
+            <h3>Szendrei Attila</h3>
+        </header>
+        <main>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="simonyi.jpg" alt="simonyi" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Simonyi Ottó</h3>
+                        <h2>Simonyi Ottó a mesterlövész</h2>
+                        <h4>A vadászbolt (2022)</h4>
+                        <button type="button" class="btn" onclick="addToCart('simonyi','Simonyi Ottó a mesterlövész','simonyi.jpg',2990)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">Absztrakt
+                            Cél: A cikk a legismertebb magyar rendőrségi mesterlövész önéletrajzi elemeket is tartalmazó
+                            lövészeti könyvét mutatja be.
+                            Módszertan: A könyv részletekbe menő tanulmányozása, egyéb, a témában közelmúltban megjelent
+                            magyar és külföldi kiadvánnyal való összevetése.
+                            Megállapítások: A kötet az igényes és olvasmányos szöveget kiegészítve több, eddig
+                            publikálatlan fényképet is tartalmaz, melyek a fegyverzet, öltözet és lövészeti technikák
+                            fejlődésének bemutatásán túl egyenruházattörténeti és rendészettörténeti szempontból is
+                            figyelemre méltók.
+                            Érték: Az emelt szintű távcsövespuska-lövészetről éppúgy képet kap az olvasó, mint a szerző
+                            pályafutásáról, motivációjáról.</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="btk.jpg" alt="btk" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Magyar Köztársaság</h3>
+                        <h2>Büntető törvénykönyv</h2>
+                        <h4>Wolters Kluwer</h4>
+                        <button type="button" class="btn" onclick="addToCart('btk','Büntető törvénykönyv','btk.jpg',4990)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">Kiknek ajánljuk:
+                            Ügyvédeknek, ügyvédjelölteknek, bíráknak, ügyészeknek, joghallgatóknak</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="helyesir.jpg" alt="helyesir" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">A magyar helyesírás szabályai</h3>
+                        <h2>A magyar helyesírás</h2>
+                        <h4>Akadémiai Kiadó</h4>
+                        <button type="button" class="btn" onclick="addToCart('helyesir','A magyar helyesírás','helyesir.jpg',3990)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">A magyar helyesírás Magyar Tudományos Akadémia által alkotott és
+                            jóváhagyott szabályzata: a 12. kiadás.
+                            Segítséget nyújt magyar nyelvű szövegek írásához, a helyes nyelvhasználathoz.
+
+                            új helyesírási szabályok
+                            8000 új szóval bővített szótár
+                            szótár az új helyesírás szabályai szerint
+                            szótár az új szabálypontokra való hivatkozással
+                            a szabályzat változásainak tételes felsorolása
+                            szólista a régi és az új helyesírás szerint</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="penz.jpg" alt="penz" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Ivan Tapia, Montse Linde</h3>
+                        <h2>A NAGY PÉNZRABLÁS - A PROFESSZOR NAPLÓJA - MENEKÜLŐ KÖNYV</h2>
+                        <h4>Művelt Nép Könyvkiadó Kft.</h4>
+                        <button type="button" class="btn" onclick="addToCart('penz','A NAGY PÉNZRABLÁS','penz.jpg',3490)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">Sergio Marquina, vagy ismertebb nevén "a Professzor",
+                            Spanyolország legnagyobb rablásának vezetője gyerek- és kamaszkora nagy részét a San
+                            Sebastiáni San Juan de Dios kórházban töltötte. Ott kötött barátságot Jero Lamarcával.
+
+                            Jero legnehezebb napjain a már akkor is kivételes intelligenciával bíró Sergio fejtörőket
+                            talált ki számára, hogy elterelje a figyelmét a betegségről. Amikor Sergio tekintete
+                            homályosult el, Jero terelte vissza: megtanította papírmadarakat hajtogatni.
+
+                            Kis idő eltelt már az Állami Pénzverde kirablása óta. Jero éppen a kevéske holmiját
+                            szedegeti össze a motorjavító műhelyében, melyet bezárni kényszerül, amikor csomagot kap.
+                            Egy aláírás nélküli levél, egy füzet, egy lakattal lezárt kis doboz, egy fénykép, egy Dali
+                            maszk és egy piros papírmadár van benne.
+
+                            Jeronak kétsége sem lehet. Valahol odakint Sergio elrejtette számára a zsákmány egy részét,
+                            hogy új életet kezdhessen. Csak követnie kell nyomokat, hogy megtalálja.</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="borzalmakvarosa.jpg" alt="borzalmakvarosa" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Stephen King</h3>
+                        <h2>Borzalmak Városa</h2>
+                        <h4>Kottafutár </h4>
+                        <button type="button" class="btn" onclick="addToCart('borzalmakvarosa','Borzalmak Városa','borzalmakvarosa.jpg',2790)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">Ben Mears, a sikeres író visszatér a Jerusalem’s Lot nevű, isten
+                            háta mögötti kisvárosba, hogy „kiírja” magából itt szerzett gyermekkori traumáját: az
+                            1930-as években a komoran a helység fölé magasodó Marsten-házba vonult vissza egy véres kezű
+                            gengszter, aki egy nap – látszólag minden indok nélkül – agyonlőtte feleségét, majd
+                            felkötötte magát. A gyermek Ben Mears egyszer beszökött ide, és meglátta a gengszter lógó
+                            hulláját, amely még évtizedek múltán sem indult oszlásnak… Az írónak azonban nem a nyugodt
+                            alkotómunka jut osztályrészül. Az álmos kisvárost mindinkább a megmagyarázhatatlan rettegés
+                            keríti hatalmába. Találnak egy akasztott kutyát, eltűnik két gyerek, s egyik este egy
+                            talpraesett kisfiú, Mark Pétrie a szobája ablakában megpillantja az egyik – időközben
+                            eltemetett – gyermek vigyorgó arcát. Mark már-már enged a kísértet bűverejének, de azután
+                            egy keresztet tart feléje, aminek láttán a jelenés agonizálni kezd, és füstté válik. Ben,
+                            Mark és még néhány, mindenre elszánt helybéli megindítja élet-halál harcát a Marsten-ház
+                            titokzatos lakói ellen.
+                            A Borzalmak városa Stephen King másodikként megjelent regénye, 1975-ből. Bár a művet a
+                            Carrie című regény után adták ki, de előbb született.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="kor.jpg" alt="kor" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Dave Eggers</h3>
+                        <h2>A Kör</h2>
+                        <h4>Európa</h4>
+                        <button type="button" class="btn" onclick="addToCart('kor','A Kör','kor.jpg',3290)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">A TITOK HAZUGSÁG.
+                            A MEGOSZTÁS TÖRŐDÉS.
+                            A FÉLREVONULÁS LOPÁS.
+                            Mae, a huszonéves lány még csak pár napja dolgozik álmai munkahelyén, de máris teljesen
+                            átalakult az élete. Mihez kezdjen ezekkel a tapasztalatokkal? Dave Eggers sokkoló
+                            konkrétsággal rajzolja meg napjaink szép új világ-át. A Kör fiatalos, menő kaliforniai
+                            szoftvercég, amelyben nem nehéz ráismernünk a Facebookra vagy éppen Google-re. Lelkesedésük
+                            és profizmusuk pillanatok alatt elhozza a tökéletes modernizációt de mi a helyzet a privát
+                            szférával és az egyéni szabadságjogokkal? A Kör dermesztő víziója közelebb van hozzád, mint
+                            gondolnád.
+                            Este tízre Mae végzett a teljes céges üzenet- és felhívástömeggel, és áttért saját külső
+                            postafiókjára. Hat napja nem nyitotta ki, és most látta, hogy, csak az első napon
+                            száztizennyolc levele érkezett. Úgy döntött, ezen a sorozaton is átrágja magát, a
+                            legfrissebbektől visszafelé. A legújabb üzenetben egyik egyetemi diáktársnője számolt be
+                            arról, hogy gyomrára húzódott az influenza, majd hosszú levélfüzér következett, amelyben
+                            némelyek gyógymódokat ajánlottak, mások sajnálkoztak, megint mások fényképeket küldtek, hogy
+                            felvidítsák a beteget. Mae lájkolt két fotót, három hozzászólást, posztolta saját
+                            jókívánságait, és átküldte a Rókázó Sally című szám linkjét. Ez újabb ötvennégy
+                            megjegyzésből álló folyamot indított el a dalról meg az együttesről. Valaki azt írta, ismeri
+                            a banda basszusgitárosát, akit aztán be is vont az eszmecserébe. Damien Ghilotti, a
+                            basszusgitáros most Új-Zélandon hangmérnökösködik, de örül, hogy a Rókázó Sally még ma is
+                            megdobogtatja az influenzások szívét. Bejegyzése minden résztvevőt felvillanyozott,
+                            százhuszonkilenc új poszt jelent meg, amelyekben mindenki örvendezett, hogy az együttes
+                            basszusgitárosáról hall, és a láncolat végén meghívták Damien Ghilottit, hogy ha kedve van,
+                            játsszon egy esküvőn, vagy látogasson el Boulderbe, vagy Bath-ba, vagy Gainesville-be, vagy
+                            az Illinois állambeli St. Charlesba: ha bármikor arra jár, szívesen látják éjszakára meg egy
+                            házias vacsorára. St. Charles hallatán valaki megkérdezte, nem hallott-e valaki az ottaniak
+                            közül Tim Jenkinsről, aki Afganisztánban harcol; tudtak egy illinois-i srácról, akit
+                            agyonlőtt egy rendőrnek álcázott afgán felkelő. Hatvan üzenettel később a válaszolók
+                            kiderítették, hogy az egy másik Tim Jenkins, nem St. Charlesból, hanem az illinois-i
+                            Rantoulból. Általános volt a megkönnyebbülés, ám az üzenetláncot hamarosan az afganisztáni
+                            háború hatékonyságáról és általában az amerikai külpolitikáról szóló sokszereplős vita
+                            uralta el, győztünk-e Vietnamban, Grenadában, sőt a második világháborúban, vagy nem,
+                            képesek-e az afgánok az önálló kormányzásra, mi a helyzet a felkelőket finanszírozó
+                            ópiumkereskedelemmel, lehetséges-e bármely vagy minden tiltott drog legálissá tétele
+                            Amerikában és Európában. Valaki szóba hozta a marihuána jótékony hatását a zöldhályog
+                            kezelésében, másvalaki megemlítette, hogy a szklerózis multiplexben szenvedőknek is használ,
+                            mire lázas eszmecsere kezdődött három olyan résztvevő között, akinek szklerózis multiplexes
+                            rokona van. Ekkor Mae úgy érezte, sötét fellegek gyülekeznek a feje fölött, és
+                            kijelentkezett.</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="rounded book">
+                <div class="row">
+                    <div class="col">
+                        <img src="volgy.jpg" alt="volgy" class="img-fluid float-start m-4">
+                        <h3 class="mt-3">Carlos Rojas</h3>
+                        <h2>Az ​Elesettek Völgye</h2>
+                        <h4>Libri</h4>
+                        <button type="button" class="btn" onclick="addToCart('volgy','Az Elesettek Völgye','volgy.jpg',3690)">Kosárba</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-4 style-outline">„Spanyolország ​nem létezik. Ez is csak amolyan Bolondság, amely
+                            önnön tragikus fényében tündököl az idők éjszakájában” – jelenti ki újra meg újra Carlos
+                            Rojas regényében a halálát váró Goya, miközben emlékezetében felidézi mindazt, amiben hosszú
+                            élete során része volt. Ezzel párhuzamosan, a regény másik síkjában, egy művészettörténész
+                            dolgozik kétségbeesett igyekezettel Goya életrajzán, és közben a Franco haláltusájáról szóló
+                            híradásokat hallgatja táskarádióján egy elhagyott házba. Ahogy egyre jobban előrehalad
+                            munkájában, mindinkább világossá válik előtte, hogy sorsa végérvényesen összekapcsolódott a
+                            nagy festő életével: miközben Goyáról beszél, tulajdonképpen a saját életrajzát írja. A
+                            hatalmas anyag minduntalan kicsúszik a kezéből, és meg-megújuló kétségei arra kényszerítik,
+                            hogy szembenézzen önmagával és hazája valóságával. Az olvasó előtt pedig intrikák,
+                            házasságtörések és kegyetlenkedések sorozatán keresztül kirajzolódik Spanyolország utolsó
+                            kétszáz esztendejének történelme, egészen addig a pillanatig, amkor Franco halálával új
+                            korszak kezdődik: egy egész népnek szembe kell néznie önmagával, megmarad-e a „mészárosok és
+                            bohócok országának”, vagy felelősséggel kezébe veszi sorsának irányítását.</p>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <div id="no-results-msg" style="display: none;">Nincs találat</div>
+        </main>
+    </div>
+
+</body>
+
+<!-- Load Bootstrap JS (bundle includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-" crossorigin="anonymous"></script>
+<script src="navbar.js"></script>
+
+<!-- Bootstrap modal for cart -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Kosár</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
+            </div>
+            <div class="modal-body" id="cart-modal-body">
+                <!-- cart content injected by JS -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast container (bottom-right) -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+    <div id="cart-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="cart-toast-body">
+                Termék hozzáadva a kosárhoz
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Bezár"></button>
+        </div>
+    </div>
+</div>
+
+</html>
+
+<!-- Footer contact (fixed bottom) -->
+<footer class="site-footer bg-dark text-white py-2 fixed-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>Kapcsolat: <a href="mailto:info@attilakonyv.hu" class="text-white">info@attilakonyv.hu</a> | +36 30 123 4567</div>
+        <div><a href="contact.html" target="_blank" class="text-white">Részletes kapcsolat</a></div>
+    </div>
+</footer>

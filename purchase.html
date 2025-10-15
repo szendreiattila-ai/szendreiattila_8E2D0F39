@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vásárlás - Könyv</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+  <div class="container">
+    <header style="text-align:center; margin-top:20px;">
+      <h1 style="font-family:Georgia, serif;">Vásárlás megerősítése</h1>
+      <p class="lead">Ellenőrizd a kosár tartalmát, és válassz, melyik könyvhöz szeretnél továbbmenni.</p>
+    </header>
+    <main>
+      <div id="cart-contents" class="mt-4"></div>
+    </main>
+  </div>
+
+  <script>
+    // Külső URL-ek ugyanazok, ha úgy döntesz, lehet szerver oldalról tölteni.
+    const externalUrls = {
+      simonyi: 'https://ojs.mtak.hu/index.php/belugyiszemle/article/view/8953',
+      btk: 'https://shop.wolterskluwer.hu/termek-reszletek/jog/buntetojog/nagykommentar-a-bunteto-torvenykonyvhoz.p1888/NOV1056.v9375',
+      helyesir: 'https://akademiai.hu/szotarak/magyar-egynyelvu-szotar/p400m13029-a-magyar-helyesiras-szabalyai-12-kiadas.html',
+      penz: 'https://konyvesboltom.hu/A-nagy-penzrablas-A-professzor-naploja-Menekulo-ko',
+      borzalmakvarosa: 'https://kottafutar.hu/Borzalmak-varosa-2019',
+      kor: 'https://www.ekonyv.hu/a-kor-1',
+      volgy: 'https://www.libri.hu/konyv/Az-Elesettek-Volgye-13.html'
+    };
+
+    function readCart(){
+      const raw = localStorage.getItem('cart');
+      return raw ? JSON.parse(raw) : [];
+    }
+
+    function renderCart(){
+      const items = readCart();
+      const container = document.getElementById('cart-contents');
+      if(items.length===0){
+        container.innerHTML = '<p>A kosarad üres.</p>';
+        return;
+      }
+      let html = '<table class="table"><thead><tr><th>Termék</th><th>Egységár</th><th>Mennyiség</th><th>Összeg</th><th></th></tr></thead><tbody>';
+      let total = 0;
+      items.forEach((it, idx) => {
+        const subtotal = (it.price||0) * (it.qty||1);
+        total += subtotal;
+        html += `<tr><td><img src="${it.img}" style="width:60px; margin-right:8px;"> ${it.title}</td><td>${(it.price||0).toLocaleString()} Ft</td><td>${it.qty||1}</td><td>${subtotal.toLocaleString()} Ft</td><td><a class="btn btn-sm btn-primary" href="${externalUrls[it.id]||'#'}" target="_blank" rel="noopener noreferrer">Tovább a boltba</a></td></tr>`;
+      });
+      html += `</tbody></table><div class="d-flex justify-content-end"><h4>Végösszeg: ${total.toLocaleString()} Ft</h4></div>`;
+      container.innerHTML = html;
+    }
+
+    function removeFromCart(idx){
+      const items = readCart();
+      items.splice(idx,1);
+      localStorage.setItem('cart', JSON.stringify(items));
+      renderCart();
+    }
+
+    // Ha nincs kosár, megpróbáljuk a query param alapján betölteni az egyedi könyvet (visszamenő kompatibilitás)
+    function getQueryParam(name){
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    const cart = readCart();
+    const q = getQueryParam('book');
+    if(cart.length>0){
+      renderCart();
+    } else if(q){
+      // fallback single-book view
+      const title = q;
+      document.getElementById('cart-contents').innerHTML = `<h3>${title}</h3><p>Nincs kosár: megnyitva egyedi könyv.</p>`;
+    } else {
+      document.getElementById('cart-contents').innerHTML = '<p>A kosarad üres.</p>';
+    }
+  </script>
+</body>
+</html>

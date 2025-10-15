@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exkluzív könyvek</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="stilus.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Attila könyvesboltja</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="Home" href="index.html">Kezdőlap</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="exclusive.html" target="_blank" rel="noopener noreferrer">Exkluzív könyvek <span class="sr-only">(Aktív)</span></a>
+                </li>
+            </ul>
+            <form class="d-flex align-items-center my-2 my-lg-0">
+                <input class="form-control mr-2" type="text" placeholder="Keresés" aria-label="keresés" id="search-box">
+            <button class="btn btn-outline-success" type="button" id="search-btn">Keresés</button>
+            </form>
+        </div>
+    </nav>
+
+    <header class="exclusive-hero text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4">Exkluzív Gyűjtemény</h1>
+            <p class="lead">Kurátori válogatás — különleges kiadások és illusztrált kötetek</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="simonyi.jpg" class="card-img-top" alt="simonyi">
+                    <div class="card-body">
+                        <h5 class="card-title">Simonyi: Mesterlövész - Különkiadás</h5>
+                        <p class="card-text">Egyedi borító, számozott példány, szerzői dedikációval.</p>
+                        <button class="btn btn-outline-primary" onclick="addToCart('simonyi-ex','Simonyi - Különkiadás','simonyi.jpg',7990)">Kosárba</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="penz.jpg" class="card-img-top" alt="penz">
+                    <div class="card-body">
+                        <h5 class="card-title">A nagy pénzrablás - Illusztrált</h5>
+                        <p class="card-text">Luxuskivitel, exkluzív csomagolás és bónusz füzet.</p>
+                        <button class="btn btn-outline-primary" onclick="addToCart('penz-ex','A nagy pénzrablás - Illusztrált','penz.jpg',5990)">Kosárba</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="borzalmakvarosa.jpg" class="card-img-top" alt="borzalmakvarosa">
+                    <div class="card-body">
+                        <h5 class="card-title">Borzalmak Városa - Luxus kiadás</h5>
+                        <p class="card-text">Kiadói extrákkal és speciális tipográfiával.</p>
+                        <button class="btn btn-outline-primary" onclick="addToCart('borz-ex','Borzalmak Városa - Luxus','borzalmakvarosa.jpg',6990)">Kosárba</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="navbar.js"></script>
+</body>
+
+</html>
