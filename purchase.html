@@ -19,7 +19,7 @@
   </div>
 
   <script>
-    // Külső URL-ek ugyanazok, ha úgy döntesz, lehet szerver oldalról tölteni.
+    
     const externalUrls = {
       simonyi: 'https://ojs.mtak.hu/index.php/belugyiszemle/article/view/8953',
       btk: 'https://shop.wolterskluwer.hu/termek-reszletek/jog/buntetojog/nagykommentar-a-bunteto-torvenykonyvhoz.p1888/NOV1056.v9375',
@@ -60,7 +60,7 @@
       renderCart();
     }
 
-    // Ha nincs kosár, megpróbáljuk a query param alapján betölteni az egyedi könyvet (visszamenő kompatibilitás)
+    
     function getQueryParam(name){
       const params = new URLSearchParams(window.location.search);
       return params.get(name);
@@ -71,7 +71,7 @@
     if(cart.length>0){
       renderCart();
     } else if(q){
-      // fallback single-book view
+      
       const title = q;
       document.getElementById('cart-contents').innerHTML = `<h3>${title}</h3><p>Nincs kosár: megnyitva egyedi könyv.</p>`;
     } else {

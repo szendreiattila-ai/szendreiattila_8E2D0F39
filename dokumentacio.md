@@ -24,3 +24,4 @@ HTML, CSS, JS
 | `toggleMobileMenu()` | Felelős a mobil nézetben lévő ún. "hamburger menü" megjelenítéséért és elrejtéséért (CSS osztályok hozzáadásával/eltávolításával). |
 | `fetchWeatherData()` | *[Ha van ilyen]* Aszinkron lekérdezést indít egy külső API-hoz (pl. OpenWeatherMap) a valós idejű adatok lekéréséhez. |
 
+ 
