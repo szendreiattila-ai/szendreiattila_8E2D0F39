@@ -25,12 +25,12 @@ function updateCartCount(){
 
 function addToCart(id, title, img, price){
     const items = getCart();
-    // ha már van ilyen item, növeljük a mennyiséget
+    
     const existing = items.find(i=>i.id===id);
     if(existing){ existing.qty = (existing.qty||1) + 1; }
     else { items.push({id, title, img, price: price||0, qty: 1}); }
     setCart(items);
-    // show a short, non-blocking toast to confirm add
+ 
     try{
         const toastBody = document.getElementById('cart-toast-body');
         if(toastBody) toastBody.textContent = title + ' hozzáadva';
@@ -60,7 +60,7 @@ function showCartPanel(){
         document.getElementById('modal-purchase').addEventListener('click', proceedToPurchase);
         document.getElementById('modal-close').addEventListener('click', closeCartModal);
     }
-    // show bootstrap modal
+   
     const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
     modal.show();
 }
@@ -69,10 +69,10 @@ function changeQty(index, delta){
     const items = getCart();
     items[index].qty = Math.max(1, (items[index].qty||1) + delta);
     setCart(items);
-    // re-render the cart modal so the displayed qty and totals update immediately
+  
     const modalEl = document.getElementById('cartModal');
     if(modalEl){
-        // if modal is open, re-render contents
+        
         showCartPanel();
     }
 }
@@ -81,7 +81,7 @@ function removeFromCart(index){
     const items = getCart();
     items.splice(index,1);
     setCart(items);
-    // refresh modal view if open
+    
     const modalEl = document.getElementById('cartModal');
     if(modalEl){ showCartPanel(); }
 }
@@ -93,7 +93,7 @@ function closeCartModal(){
 }
 
 function proceedToPurchase(){
-    // open purchase page which will read cart from localStorage
+   
     window.open('purchase.html','_blank');
 }
 
